@@ -18,7 +18,6 @@ public class InternalApiService {
     private static final String UUID_FIELD_NAME = "uuid";
     private static final String USERNAME_FIELD_NAME = "username";
     private static final String NAME_FIELD_NAME = "name";
-    private static final String TITLE_FIELD_NAME = "title";
     private static final String FIRST_FIELD_NAME = "first";
     private static final String LAST_FIELD_NAME = "last";
     private static final String GENDER_FIELD_NAME = "gender";
@@ -77,8 +76,7 @@ public class InternalApiService {
 
     private static String getUserFullName(JSONObject jsonUser) {
         var nameFieldJson = jsonUser.getJSONObject(NAME_FIELD_NAME);
-        return nameFieldJson.getString(TITLE_FIELD_NAME) + " " +
-                nameFieldJson.getString(FIRST_FIELD_NAME) + " " +
+        return nameFieldJson.getString(FIRST_FIELD_NAME) + " " +
                 nameFieldJson.getString(LAST_FIELD_NAME);
     }
 }
